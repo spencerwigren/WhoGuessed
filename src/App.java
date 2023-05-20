@@ -19,35 +19,11 @@ public class App {
             System.out.print("What is name " + (i+1) + ": ");
             String name = System.console().readLine();
 
-            namesMap.put(name, rand.nextInt(10));
+            namesMap.put(name, rand.nextInt(20));
 
         }
     }
 
-    private static int getAverage(HashMap<String, Integer> namesMap) {
-        // Finds the average of the numbers
-        
-        int average = 0;
-        int total = 0;
-        for (String i : namesMap.keySet()) {
-            average += namesMap.get(i);
-            total += 1;
-        }
-
-        average = average / total;
-
-        return average;
-    }
-
-
-    public static boolean guessAverage(HashMap<String, Integer> namesMap) {
-        
-        
-        int average = getAverage(namesMap);
-        System.out.println(average);
-        
-        return true;
-    }
 
 
     public static void main(String[] args) throws Exception{
@@ -66,10 +42,16 @@ public class App {
         // Create Random object
         Random rand = new Random();
 
+        // instructions
+        System.out.println("You will input a number for how many names you want to add");
+        System.out.println("Then they will generate an number from 1-20");
+        System.out.println("After that you will try to guess the avergae\n");
+
+
         Boolean gameHandler = true;
         while (gameHandler) {
             
-            System.out.print("How many names do you want to guess? (1-10) ");
+            System.out.print("How many name do you want to guess? (1-10) ");
             String numNames = System.console().readLine();
             try {
                 // Sets numNames to an interger numberNames
@@ -77,7 +59,9 @@ public class App {
                 
                 // sets hashmap
                 getNames(numberNames, namesMap, rand);
-                guessAverage(namesMap);
+                
+                // Has player guss the average of the number
+                guessAverage.guessAverageNumber(namesMap);
 
 
                 System.out.print("Do you want to add more names and guess again? (Y/N) ");
