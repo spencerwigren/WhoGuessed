@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 import java.util.HashMap;
@@ -11,6 +10,10 @@ public class App {
     public static void getNames(Integer numberNames,
         HashMap<String, Integer> namesMap,
         Random rand ) {
+        /**
+        * Add names
+        * Add random number of 1-10 for each name
+        */
 
         for (int i = 0; i < numberNames; i++) {
             System.out.print("What is name " + (i+1) + ": ");
@@ -19,6 +22,31 @@ public class App {
             namesMap.put(name, rand.nextInt(10));
 
         }
+    }
+
+    private static int getAverage(HashMap<String, Integer> namesMap) {
+        // Finds the average of the numbers
+        
+        int average = 0;
+        int total = 0;
+        for (String i : namesMap.keySet()) {
+            average += namesMap.get(i);
+            total += 1;
+        }
+
+        average = average / total;
+
+        return average;
+    }
+
+
+    public static boolean guessAverage(HashMap<String, Integer> namesMap) {
+        
+        
+        int average = getAverage(namesMap);
+        System.out.println(average);
+        
+        return true;
     }
 
 
@@ -47,24 +75,22 @@ public class App {
                 // Sets numNames to an interger numberNames
                 int numberNames = Integer.parseInt(numNames);
                 
-                // Set hashmap to the number of names
-                // along with a random number of 1-10
+                // sets hashmap
                 getNames(numberNames, namesMap, rand);
+                guessAverage(namesMap);
 
 
-                System.out.print("Do you want to play again? (Y/N) ");
+                System.out.print("Do you want to add more names and guess again? (Y/N) ");
                 String GameQuit = System.console().readLine();
 
                 // Exit game
                 if (GameQuit.toUpperCase().equals("N")){
-                    fileHandler.main(2, namesMap, pw);
-                    fileHandler.main(1,namesMap, pw);
+                    fileHandler.writefile();
+                    fileHandler.writeMapFile(namesMap, pw);
+                    fileHandler.readFile();
 
                     gameHandler = false;
                 }
-
-
-
 
             } catch (NumberFormatException e) {
                 System.out.println("The input was not a number\nplease try again");
@@ -72,4 +98,7 @@ public class App {
         }
 
     }
+
+
+
 }
