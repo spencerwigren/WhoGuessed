@@ -18,10 +18,10 @@ public class fileHandler {
         PrintWriter pw) throws IOException {
         
         System.out.println("IN WRITEMAPFILE METHOD");
-
+        
         // write hashmap data to file
         for (String i : namesMap.keySet()) {
-            pw.println(i + " " + namesMap.get(i));
+            pw.write(i + " " + namesMap.get(i) + "\n");
             
         }
         pw.close();
