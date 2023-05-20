@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
-
 import java.util.HashMap;
 
 public class App {
@@ -22,9 +20,6 @@ public class App {
             
             System.out.print("What is your name: ");
             String name = System.console().readLine();
-
-
-
 
             System.out.print("Do you want to play again? (Y/N) ");
             String GameQuit = System.console().readLine();
