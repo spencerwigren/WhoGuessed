@@ -1,6 +1,9 @@
 Player Guesses:
-Guess 01 10
+Guess 0 5
+Guess 1 9
+Guess 2 7
 
 Players and their number:
-Bill 3
-Jill 17
+Bob 3
+Bill 16
+Jill 3
