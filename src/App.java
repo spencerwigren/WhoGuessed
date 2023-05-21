@@ -11,7 +11,7 @@ public class App {
         HashMap<String, Integer> namesMap,
         Random rand ) {
         /**
-        * Add names
+        * Add names to HashMap
         * Add random number of 1-10 for each name
         */
 
@@ -51,7 +51,7 @@ public class App {
         System.out.println("Then they will generate an number from 1-20");
         System.out.println("After that you will try to guess the avergae\n");
 
-
+        // game handler
         Boolean gameHandler = true;
         while (gameHandler) {
             
