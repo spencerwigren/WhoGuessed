@@ -16,7 +16,7 @@ public class App {
         */
 
         for (int i = 0; i < numberNames; i++) {
-            System.out.print("What is name " + (i+1) + ": ");
+            System.out.print("What is name" + (i+1) + ": ");
             String name = System.console().readLine();
 
             namesMap.put(name, rand.nextInt(20));
@@ -24,9 +24,10 @@ public class App {
         }
     }
 
-
-
     public static void main(String[] args) throws Exception{
+        /*
+         * main method handling the program 
+         */
 
         // Handles file wrting and reading logic
         String FileName = "src/scores.txt";
@@ -34,6 +35,9 @@ public class App {
         FileWriter writer = new FileWriter(file);
         PrintWriter pw = new PrintWriter(writer);
 
+        // Player guesses
+        HashMap<String, Integer> playerGuesses = new HashMap<String, Integer>();
+        int guesses = 0;
 
 
         // Creates HashMap
@@ -51,7 +55,7 @@ public class App {
         Boolean gameHandler = true;
         while (gameHandler) {
             
-            System.out.print("How many name do you want to guess? (1-10) ");
+            System.out.print("How many name do you want to enter? (1-10) ");
             String numNames = System.console().readLine();
             try {
                 // Sets numNames to an interger numberNames
@@ -61,15 +65,14 @@ public class App {
                 getNames(numberNames, namesMap, rand);
                 
                 // Has player guss the average of the number
-                guessAverage.guessAverageNumber(namesMap);
-
+                guessAverage.guessAverageNumber(namesMap, playerGuesses, guesses);
 
                 System.out.print("Do you want to add more names and guess again? (Y/N) ");
                 String GameQuit = System.console().readLine();
 
                 // Exit game
                 if (GameQuit.toUpperCase().equals("N")){
-                    fileHandler.writefile();
+                    fileHandler.writefile(playerGuesses, pw);
                     fileHandler.writeMapFile(namesMap, pw);
                     fileHandler.readFile();
 

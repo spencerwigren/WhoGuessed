@@ -9,15 +9,20 @@ public class fileHandler {
     }
 
 
-    public static void writefile() throws IOException {
-        System.out.println("IN WRITEFILE METHOD");
+    public static void writefile(HashMap<String, Integer> playerGuesses,
+     PrintWriter pw) throws IOException {
+     
+        pw.write("Player Guesses:\n");
+
+        for (String i : playerGuesses.keySet()) {
+            pw.write(i + " " + playerGuesses.get(i) + "\n");
+        }
+        pw.write("\nPlayers and their number:\n");
     }
 
 
     public static void writeMapFile(HashMap<String, Integer> namesMap,
         PrintWriter pw) throws IOException {
-        
-        System.out.println("IN WRITEMAPFILE METHOD");
         
         // write hashmap data to file
         for (String i : namesMap.keySet()) {
