@@ -1,32 +1,35 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+### Who Guessed
 
-{Provide a description of the software that you wrote to demonstrate the Java language.}
+My goal in this program is to help me get a basic understanding of java.
 
-{Describe your purpose for writing this software.}
+This softwear, will ask the player to enters an many names as he would like
+Once the names have been entered, a random value will be generated for each names
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+Then the player is tasked to find the average of those numbers
 
-[Software Demo Video](http://youtube.link.goes.here)
+**Here is a softwear domo**
+
+[Software Demo Video](https://youtu.be/zmycuB-L6DQ)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+Visual Studio Code
 
-{Describe the programming language that you used and any libraries.}
+Java
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [w3schools](https://www.w3schools.com/java/default.asp)
+- [stackoverflow](https://stackoverflow.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+Improvements needed:
 
-- Item 1
-- Item 2
-- Item 3
+1. Create a catch once the program ask the player if they would like to add more people.
+
+2. Better file handler.
+
+3. Imporve upon how the logic is handled. 
