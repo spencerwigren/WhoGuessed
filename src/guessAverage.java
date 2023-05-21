@@ -1,9 +1,15 @@
 import java.util.HashMap;
 
 public class guessAverage {
+    /*
+     * This class will handle getting the players guess
+     * Finding the average of the names valuess
+     */
     
     private static int getAverage(HashMap<String, Integer> namesMap) {
-        // Finds the average of the numbers
+        /*
+         * Will find the average of namesMap rand values
+         */
         
         int average = 0;
         int total = 0;
@@ -28,6 +34,7 @@ public class guessAverage {
         int average = getAverage(namesMap);
         System.out.println(average);
 
+        // Loop for players guess
         while (true){
             System.out.print("What do you think the average guess is (1-20): ");
             String guess = System.console().readLine();
@@ -38,13 +45,16 @@ public class guessAverage {
                 playerGuesses.put("Guess "+ guesses, guessNumber);
                 guesses += 1;
 
+                // Check to see if guess is correct
                 if (guessNumber == average) {
                     System.out.println("Congratualtion your guess " + guessNumber + " is the correct average!!!!\n");
                     return;
                 } 
+                // Check to see if guess is less then average
                 else if (guessNumber < average){
                     System.out.println("Number " + guessNumber + " is to small - try again");
                 } 
+                // Check to see if guess is greater then averages
                 else if (guessNumber > average) {
                     System.out.println("Number" + guessNumber + " is to larger - try again");
                 }
