@@ -16,7 +16,7 @@ public class App {
         */
 
         for (int i = 0; i < numberNames; i++) {
-            System.out.print("What is name" + (i+1) + ": ");
+            System.out.print("What is name " + (i+1) + ": ");
             String name = System.console().readLine();
 
             namesMap.put(name, rand.nextInt(20));
@@ -72,8 +72,7 @@ public class App {
 
                 // Exit game
                 if (GameQuit.toUpperCase().equals("N")){
-                    fileHandler.writefile(playerGuesses, pw);
-                    fileHandler.writeMapFile(namesMap, pw);
+                    fileHandler.writefile(playerGuesses, namesMap, pw);
                     fileHandler.readFile(FileName);
 
                     gameHandler = false;
