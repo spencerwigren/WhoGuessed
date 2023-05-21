@@ -1,0 +1,7 @@
+Player Guesses:
+Guess 0 2
+Guess 1 0
+Guess 2 9
+
+Players and their number:Bill 18
+jill 0
