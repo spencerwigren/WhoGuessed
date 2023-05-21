@@ -74,7 +74,7 @@ public class App {
                 if (GameQuit.toUpperCase().equals("N")){
                     fileHandler.writefile(playerGuesses, pw);
                     fileHandler.writeMapFile(namesMap, pw);
-                    fileHandler.readFile();
+                    fileHandler.readFile(FileName);
 
                     gameHandler = false;
                 }
